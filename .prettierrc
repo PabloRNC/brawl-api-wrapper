@@ -1,0 +1,9 @@
+{
+	"printWidth": 90,
+	"useTabs": true,
+	"tabWidth": 2,
+	"semi": false,
+	"singleQuote": true,
+	"quoteProps": "as-needed",
+	"endOfLine": "crlf"
+}

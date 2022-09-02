@@ -1,8 +1,8 @@
-import { BattleLogResponse } from "../types/BattleLogResponse"
+import type { BattleLogResponse } from '../types/BattleLogResponse'
 
-export class BattleLog{
-    public battles: BattleLogResponse[]
-    constructor(data: BattleLogResponse[]){
-        this.battles = data
-    }
+export class BattleLog {
+	public battles: BattleLogResponse[]
+	constructor(data: BattleLogResponse[]) {
+		this.battles = data
+	}
 }
