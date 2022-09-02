@@ -1,0 +1,6 @@
+export { Client } from "./structures/Client"
+export { Player } from "./structures/Player"
+export { BattleLog } from "./structures/BattleLog"
+export { Club } from "./structures/Club"
+export { Brawler } from "./structures/Brawler"
+export { Brawlers } from "./utils/Brawlers"
