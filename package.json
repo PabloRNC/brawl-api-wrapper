@@ -1,7 +1,7 @@
 {
 	"name": "brawl-api-wrapper",
 	"version": "1.0.0",
-	"description": "An API wrapper for the supercell game called Brawl Stars",
+	"description": "An API wrapper for the well know supercell game called Brawl Stars",
 	"main": "dist/index.js",
 	"types": "src/index.d.ts",
 	"scripts": {
@@ -9,9 +9,9 @@
 		"lint:fix": "eslint . --fix",
 		"format": "prettier --write ."
 	},
-	"keywords": [],
+	"keywords": ["brawl", "brawlstars", "brawlstars-api", "brawlstars-api-wrapper", "api"],
 	"author": "PabloRNC",
-	"license": "ISC",
+	"license": "MIT",
 	"devDependencies": {
 		"@types/node-fetch": "^2.6.2",
 		"@typescript-eslint/eslint-plugin": "^5.36.1",
