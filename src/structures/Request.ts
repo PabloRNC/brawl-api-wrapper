@@ -7,6 +7,7 @@ import type { RankingOfClubsResponse } from '../types/RankingOfClubsResponse'
 import type { ClubResponse } from '../types/ClubResponse'
 import type { EventsResponse } from '../types/EventsResponse'
 import { BrawlAPIError } from './BrawlAPIError'
+import { CustomError } from '../utils/CustomError'
 import type { Brawlers } from '../utils/Brawlers'
 
 export class Request {
