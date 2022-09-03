@@ -1,2 +1,7 @@
 node_modules/
 dist/
+.eslintrc.json
+.prettierrc
+LICENSE.md
+package-lock.json
+README.md
