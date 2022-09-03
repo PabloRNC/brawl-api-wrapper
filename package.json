@@ -1,6 +1,6 @@
 {
 	"name": "brawl-api-wrapper",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "An API wrapper for the well know supercell game called Brawl Stars",
 	"main": "dist/index.js",
 	"types": "src/index.d.ts",
@@ -23,8 +23,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.36.1",
 		"eslint": "^8.23.0",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-prettier": "^4.2.1",
-		"node-fetch": "^3.2.10"
+		"eslint-plugin-prettier": "^4.2.1"
 	},
 	"repository": {
 		"type": "git",
@@ -34,6 +33,6 @@
 		"url": "https://github.com/PabloRNC/brawl-api-wrapper/issues"
 	},
 	"dependencies": {
-		"brawl-api-wrapper": "^1.0.1"
+		"node-fetch": "^3.2.10"
 	}
 }

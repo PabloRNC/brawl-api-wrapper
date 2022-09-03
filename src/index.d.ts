@@ -223,18 +223,18 @@ export class Brawler {
 export class Client {
 	public token: string | undefined
 	constructor(token: string | undefined)
-	public getPlayer(tag: string): Promise<Player>
-	public getBattleLog(tag: string): Promise<BattleLog>
-	public getClub(tag: string): Promise<Club>
+	public getPlayer(tag: string | undefined): Promise<Player>
+	public getBattleLog(tag: string | undefined): Promise<BattleLog>
+	public getClub(tag: string | undefined): Promise<Club>
 	public getRankingOfPlayers(): Promise<RankingOfPlayersResponse[]>
 	public getRankingOfClubs(): Promise<RankingOfClubsResponse[]>
 	public getEvents(): Promise<EventsResponse[]>
-	public getBrawler(brawler: Brawlers): Promise<GlobalBrawler>
+	public getBrawler(brawler: Brawlers | undefined): Promise<GlobalBrawler>
 	public getBrawlers(): Promise<GlobalBrawler[]>
 	public getRankingOfPlayers(countryCode: string): Promise<RankingOfPlayersResponse[]>
 	public getRankingOfClubs(countryCode: string): Promise<RankingOfClubsResponse[]>
 	public getRankingOfBrawlers(
-		brawler: Brawlers,
+		brawler: Brawlers | undefined,
 		countryCode: string
 	): Promise<RankingOfPlayersResponse[]>
 	public getEvents(): Promise<EventsResponse[]>

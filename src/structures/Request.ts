@@ -49,19 +49,19 @@ export class Request {
 		return await this.get('brawlers').then((res: { items: GlobalBrawler[] }) => res.items)
 	}
 	public async getRankingOfPlayers(
-		countryCode: string | undefined = 'global'
+		countryCode: string
 	): Promise<RankingOfPlayersResponse[]> {
 		return await this.get(`rankings/${countryCode}/players`).then(
 			(res: { items: RankingOfPlayersResponse[] }) => res.items
 		)
 	}
-	public async getRankingOfClubs(countryCode: string | undefined = 'global'): Promise<RankingOfClubsResponse[]> {
+	public async getRankingOfClubs(countryCode: string): Promise<RankingOfClubsResponse[]> {
 		return await this.get(`rankings/${countryCode}/clubs`).then(
 			(res: { items: RankingOfClubsResponse[] }) => res.items
 		)
 	}
 	public async getRankingOfBrawlers(
-		countryCode: string | undefined = 'global',
+		countryCode: string,
 		brawler: Brawlers | undefined
 	): Promise<RankingOfPlayersResponse[]> {
 		return await this.get(`rankings/${countryCode}/brawlers/${brawler}`).then(

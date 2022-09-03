@@ -30,18 +30,18 @@ export class Client {
 		return await new Request(this.token).getBrawlers()
 	}
 	public async getRankingOfPlayers(
-		countryCode: string | undefined = 'global'
+		countryCode = 'global'
 	): Promise<RankingOfPlayersResponse[]> {
 		return await new Request(this.token).getRankingOfPlayers(countryCode)
 	}
 	public async getRankingOfClubs(
-		countryCode: string | undefined= 'global'
+		countryCode = 'global'
 	): Promise<RankingOfClubsResponse[]> {
 		return await new Request(this.token).getRankingOfClubs(countryCode)
 	}
 	public async getRankingOfBrawlers(
 		brawler: Brawlers | undefined,
-		countryCode: string | undefined = 'global'
+		countryCode = 'global'
 	): Promise<RankingOfPlayersResponse[]> {
 		return await new Request(this.token).getRankingOfBrawlers(countryCode, brawler)
 	}
