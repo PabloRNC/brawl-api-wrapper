@@ -14,34 +14,34 @@ export class Client {
 		this.token = token
 	}
 
-	public async getPlayer(tag: string): Promise<Player> {
+	public async getPlayer(tag: string | undefined): Promise<Player> {
 		return new Player(await new Request(this.token).getPlayer(tag))
 	}
-	public async getBattleLog(tag: string): Promise<BattleLog> {
+	public async getBattleLog(tag: string | undefined): Promise<BattleLog> {
 		return new BattleLog(await new Request(this.token).getBattleLog(tag))
 	}
-	public async getClub(tag: string): Promise<Club> {
+	public async getClub(tag: string | undefined): Promise<Club> {
 		return new Club(await new Request(this.token).getClub(tag))
 	}
-	public async getBrawler(brawler: Brawlers): Promise<Brawler> {
+	public async getBrawler(brawler: Brawlers | undefined): Promise<Brawler> {
 		return new Brawler(await new Request(this.token).getBrawler(brawler))
 	}
 	public async getBrawlers(): Promise<Brawler[]> {
 		return await new Request(this.token).getBrawlers()
 	}
 	public async getRankingOfPlayers(
-		countryCode = 'global'
+		countryCode: string | undefined = 'global'
 	): Promise<RankingOfPlayersResponse[]> {
 		return await new Request(this.token).getRankingOfPlayers(countryCode)
 	}
 	public async getRankingOfClubs(
-		countryCode = 'global'
+		countryCode: string | undefined= 'global'
 	): Promise<RankingOfClubsResponse[]> {
 		return await new Request(this.token).getRankingOfClubs(countryCode)
 	}
 	public async getRankingOfBrawlers(
-		brawler: Brawlers,
-		countryCode = 'global'
+		brawler: Brawlers | undefined,
+		countryCode: string | undefined = 'global'
 	): Promise<RankingOfPlayersResponse[]> {
 		return await new Request(this.token).getRankingOfBrawlers(countryCode, brawler)
 	}

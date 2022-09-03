@@ -26,43 +26,43 @@ export class Request {
 			throw new BrawlAPIError(response)
 		}
 	}
-	public async getPlayer(tag: string): Promise<PlayerResponse> {
-		return await this.get(`players/%23${tag.replace('#', '')}`).then(
+	public async getPlayer(tag: string | undefined): Promise<PlayerResponse> {
+		return await this.get(`players/%23${tag?.replace('#', '')}`).then(
 			async (res: PlayerResponse) =>
 				Object.defineProperty(res, 'battlelog', {
 					value: await this.getBattleLog(res.tag),
 				})
 		)
 	}
-	public async getBattleLog(tag: string): Promise<BattleLogResponse[]> {
-		return await this.get(`players/%23${tag.replace('#', '')}/battlelog`).then(
+	public async getBattleLog(tag: string | undefined): Promise<BattleLogResponse[]> {
+		return await this.get(`players/%23${tag?.replace('#', '')}/battlelog`).then(
 			(res: { items: BattleLogResponse[] }) => res.items
 		)
 	}
-	public async getClub(tag: string): Promise<ClubResponse> {
-		return (await this.get(`clubs/%23${tag.replace('#', '')}`)) as Promise<ClubResponse>
+	public async getClub(tag: string | undefined): Promise<ClubResponse> {
+		return (await this.get(`clubs/%23${tag?.replace('#', '')}`)) as Promise<ClubResponse>
 	}
-	public async getBrawler(id: number): Promise<GlobalBrawler> {
+	public async getBrawler(id: number | undefined): Promise<GlobalBrawler> {
 		return (await this.get(`brawlers/${id}`)) as Promise<GlobalBrawler>
 	}
 	public async getBrawlers(): Promise<GlobalBrawler[]> {
 		return await this.get('brawlers').then((res: { items: GlobalBrawler[] }) => res.items)
 	}
 	public async getRankingOfPlayers(
-		countryCode: string
+		countryCode: string | undefined = 'global'
 	): Promise<RankingOfPlayersResponse[]> {
 		return await this.get(`rankings/${countryCode}/players`).then(
 			(res: { items: RankingOfPlayersResponse[] }) => res.items
 		)
 	}
-	public async getRankingOfClubs(countryCode: string): Promise<RankingOfClubsResponse[]> {
+	public async getRankingOfClubs(countryCode: string | undefined = 'global'): Promise<RankingOfClubsResponse[]> {
 		return await this.get(`rankings/${countryCode}/clubs`).then(
 			(res: { items: RankingOfClubsResponse[] }) => res.items
 		)
 	}
 	public async getRankingOfBrawlers(
-		countryCode = 'global',
-		brawler: Brawlers
+		countryCode: string | undefined = 'global',
+		brawler: Brawlers | undefined
 	): Promise<RankingOfPlayersResponse[]> {
 		return await this.get(`rankings/${countryCode}/brawlers/${brawler}`).then(
 			(res: { items: RankingOfPlayersResponse[] }) => res.items
