@@ -7,6 +7,7 @@ import type { RankingOfClubsResponse } from '../types/RankingOfClubsResponse'
 import type { ClubResponse } from '../types/ClubResponse'
 import type { EventsResponse } from '../types/EventsResponse'
 import { BrawlAPIError } from './BrawlAPIError'
+import { CustomError } from '../utils/CustomError'
 import type { Brawlers } from '../utils/Brawlers'
 
 export class Request {
@@ -17,13 +18,20 @@ export class Request {
 	private makeHeaders(): { Authorization: string } {
 		return { Authorization: `Bearer ${this.token}` }
 	}
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private async get(endpoint: string): Promise<any | BrawlAPIError> {
 		const url = `https://api.brawlstars.com/v1/${endpoint}`
 		const response = await fetch(url, { headers: this.makeHeaders() })
 		if (response.ok) {
-			return await response.json()
+			return (await response.json()) as
+				| PlayerResponse
+				| BattleLogResponse[]
+				| ClubResponse
+				| RankingOfClubsResponse[]
+				| EventsResponse[]
 		} else {
-			throw new BrawlAPIError(response)
+			const text = CustomError(response)
+			throw new BrawlAPIError(response, text)
 		}
 	}
 	public async getPlayer(tag: string | undefined): Promise<PlayerResponse> {

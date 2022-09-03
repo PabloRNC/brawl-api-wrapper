@@ -1,10 +1,16 @@
 import type { Response } from 'node-fetch'
 
 export class BrawlAPIError extends Error {
-	public response: Response
-	constructor(response: Response) {
+	public override name: string
+	public override message: string
+	public readonly status: number
+	public readonly originalError: string
+
+	public constructor(response: Response, message: string) {
 		super()
-		this.response = response
-		this.message = `${this.response.status} ${this.response.statusText}`
+		this.name = '\x1b[31mBrawlApiError\x1b[0m'
+		this.message = message
+		this.status = response.status
+		this.originalError = response.statusText
 	}
 }
