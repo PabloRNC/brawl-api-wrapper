@@ -1,6 +1,6 @@
 {
 	"name": "brawl-api-wrapper",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "An API wrapper for the well know supercell game called Brawl Stars",
 	"main": "dist/index.js",
 	"types": "src/index.d.ts",
@@ -33,6 +33,6 @@
 		"url": "https://github.com/PabloRNC/brawl-api-wrapper/issues"
 	},
 	"dependencies": {
-		"node-fetch": "^3.2.10"
+		"node-fetch": "^2.6.7"
 	}
 }
