@@ -1,6 +1,6 @@
 import { RoboRumble } from '../utils/RoboRamble'
 import type { PlayerResponse } from '../types/PlayerResponse'
-import type { BattleLogResponse } from 'types/BattleLogResponse'
+import type { BattleLogResponse } from '../types/BattleLogResponse'
 import type { Brawler, Gadget, Gear, StarPower } from '../types/Brawler'
 export class Player {
 	public tag: string
