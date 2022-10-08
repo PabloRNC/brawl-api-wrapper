@@ -17,7 +17,7 @@ export class Player {
 	public duoVictories: number
 	public '3vs3Victories': number
 	public bestRoboRumbleTime: string
-	public club: { name: string; tag: string }
+	public club: { name: string; tag: string } | null
 	public brawlers: Brawler[]
 	public battlelog: BattleLogResponse[]
 	constructor(data: PlayerResponse) {
@@ -35,7 +35,7 @@ export class Player {
 		this.duoVictories = data.duoVictories
 		this['3vs3Victories'] = data['3vs3Victories']
 		this.bestRoboRumbleTime = RoboRumble[data.bestRoboRumbleTime]
-		this.club = data.club
+		this.club = Object.keys(data.club).length === 0 ? null : data.club
 		this.brawlers = data.brawlers
 		this.battlelog = data.battlelog
 	}
