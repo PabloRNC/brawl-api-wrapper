@@ -280,5 +280,5 @@ export class Player {
 		filter: 'TROPHIES' | 'POWER' | 'RANK',
 		criteria: 'ASCENDING' | 'DESCENDING'
 	): PlayerBrawler[]
-	public getSeasonReset(): { remainingTrophies: number , startPoints: number }
+	public getSeasonReset(): { remainingTrophies: number , starPoints: number }
 }

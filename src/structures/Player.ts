@@ -102,7 +102,7 @@ export class Player {
 		}
 	}
 
-	public getSeasonReset(): { remainingTrophies: number; startPoints: number } {
-          return { remainingTrophies: remainingTrophies(this.brawlers), startPoints: seasonStarPoints(this.brawlers) }
+	public getSeasonReset(): { remainingTrophies: number; starPoints: number } {
+          return { remainingTrophies: remainingTrophies(this.brawlers), starPoints: seasonStarPoints(this.brawlers) }
 	}
 }
