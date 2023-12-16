@@ -301,6 +301,7 @@ export class PlayerBrawler implements Brawler {
 	public starPowers: StarPower[]
 	public gadgets: Gadget[]
     public client: Client
+	public fetch() : Promise<Brawler>
 
     constructor(data: Brawler, client: Client)
 }
