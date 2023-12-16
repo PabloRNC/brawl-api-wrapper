@@ -26,6 +26,12 @@ export type Battle = {
 	}[][]
 }
 
+export type SeasonReset = {
+	remainingTrophies: number
+	blings: number
+ }
+ 
+
 export type BattleLogResponse = {
 	battleTime: string
 	event: { id: number; mode: string; map: string }
@@ -280,5 +286,5 @@ export class Player {
 		filter: 'TROPHIES' | 'POWER' | 'RANK',
 		criteria: 'ASCENDING' | 'DESCENDING'
 	): PlayerBrawler[]
-	public getSeasonReset(): { remainingTrophies: number , starPoints: number }
+	public getSeasonReset(): SeasonReset
 }

@@ -3,9 +3,9 @@ import { Player } from './Player'
 import { BattleLog } from './BattleLog'
 import { Club } from './Club'
 import { Brawler } from './Brawler'
-import type { RankingOfPlayersResponse } from '../types/RankingOfPlayerResponse'
-import type { RankingOfClubsResponse } from '../types/RankingOfClubsResponse'
-import type { EventsResponse } from '../types/EventsResponse'
+import type { RankingOfPlayersResponse } from '../interfaces/RankingOfPlayerResponse'
+import type { RankingOfClubsResponse } from '../interfaces/RankingOfClubsResponse'
+import type { EventsResponse } from '../interfaces/EventsResponse'
 import type { Brawlers } from '../utils/Brawlers'
 
 export class Client {

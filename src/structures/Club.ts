@@ -1,5 +1,5 @@
-import type { ClubMember } from '../types/ClubMember'
-import type { ClubResponse } from '../types/ClubResponse'
+import type { ClubMember } from '../interfaces/ClubMember'
+import type { ClubResponse } from '../interfaces/ClubResponse'
 
 export class Club {
 	public tag: string

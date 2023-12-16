@@ -1,4 +1,4 @@
-import type { BattleLogResponse } from '../types/BattleLogResponse'
+import type { BattleLogResponse } from '../interfaces/BattleLogResponse'
 
 export class BattleLog {
 	public battles: BattleLogResponse[]

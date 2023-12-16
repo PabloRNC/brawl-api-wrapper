@@ -1,8 +1,9 @@
 import { RoboRumble } from '../utils/RoboRamble'
-import type { PlayerResponse } from '../types/PlayerResponse'
-import type { BattleLogResponse } from '../types/BattleLogResponse'
-import type { Brawler, Gadget, Gear, StarPower } from '../types/Brawler'
-import { remainingTrophies, seasonStarPoints } from '../utils/SeasonReset'
+import type { PlayerResponse } from '../interfaces/PlayerResponse'
+import type { BattleLogResponse } from '../interfaces/BattleLogResponse'
+import type { Brawler, Gadget, Gear, StarPower } from '../interfaces/Brawler'
+import type { SeasonReset } from '../interfaces/SeasonReset'
+import { remainingTrophies, seasonBlings } from '../utils/SeasonReset'
 export class Player {
 	public tag: string
 	public name: string
@@ -102,7 +103,7 @@ export class Player {
 		}
 	}
 
-	public getSeasonReset(): { remainingTrophies: number; starPoints: number } {
-          return { remainingTrophies: remainingTrophies(this.brawlers), starPoints: seasonStarPoints(this.brawlers) }
+	public getSeasonReset(): SeasonReset {
+          return { remainingTrophies: remainingTrophies(this.brawlers, this.trophies), blings: seasonBlings(this.brawlers) }
 	}
 }

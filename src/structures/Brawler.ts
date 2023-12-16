@@ -1,4 +1,4 @@
-import type { Gadget, StarPower, GlobalBrawler } from '../types/Brawler'
+import type { Gadget, StarPower, GlobalBrawler } from '../interfaces/Brawler'
 
 export class Brawler {
 	public id: string
