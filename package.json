@@ -1,6 +1,6 @@
 {
 	"name": "brawl-api-wrapper",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"description": "An API wrapper for the well know supercell game called Brawl Stars",
 	"main": "dist/index.js",
 	"types": "src/index.d.ts",
