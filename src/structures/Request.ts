@@ -34,13 +34,13 @@ export class Request {
 			throw new BrawlAPIError(response, text)
 		}
 	}
-	public async getPlayer(tag: string | undefined): Promise<PlayerResponse> {
+	public async getPlayer(tag: string | undefined, battlelog: boolean): Promise<PlayerResponse> {
 		return await this.get(`players/%23${tag?.replace('#', '')}`).then(
 			async (res: PlayerResponse) =>
 				Object.defineProperty(res, 'battlelog', {
-					value: await this.getBattleLog(res.tag),
+					value: battlelog ? await this.getBattleLog(res.tag) : null,
 				})
-		)
+			)
 	}
 	public async getBattleLog(tag: string | undefined): Promise<BattleLogResponse[]> {
 		return await this.get(`players/%23${tag?.replace('#', '')}/battlelog`).then(

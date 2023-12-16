@@ -1,5 +1,7 @@
-import type { ClubMember } from '../interfaces/ClubMember'
+import { ClubMember } from './ClubMember'
 import type { ClubResponse } from '../interfaces/ClubResponse'
+import type { Client } from './Client'
+
 
 export class Club {
 	public tag: string
@@ -11,7 +13,7 @@ export class Club {
 	public trophies: number
 	public members: ClubMember[]
 	public memberCount: number
-	constructor(data: ClubResponse) {
+	constructor(data: ClubResponse, client: Client) {
 		this.tag = data.tag
 		this.name = data.name
 		this.description = data.description
@@ -19,7 +21,7 @@ export class Club {
 		this.badgeId = data.badgeId
 		this.requiredTrophies = data.requiredTrophies
 		this.trophies = data.trophies
-		this.members = data.members
+		this.members = data.members.map((x) => new ClubMember(x, client))
 		this.memberCount = this.members.length
 	}
 

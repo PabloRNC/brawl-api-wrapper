@@ -23,7 +23,7 @@ export class Player {
 	public bestRoboRumbleTime: string
 	public club: { name: string; tag: string } | null
 	public brawlers: PlayerBrawler[]
-	public battlelog: BattleLogResponse[]
+	public battlelog: BattleLogResponse[] | null
 	constructor(data: PlayerResponse, client: Client) {
 		this.name = data.name
 		this.tag = data.tag
@@ -41,7 +41,7 @@ export class Player {
 		this.bestRoboRumbleTime = RoboRumble[data.bestRoboRumbleTime]
 		this.club = Object.keys(data.club).length === 0 ? null : data.club
 		this.brawlers = data.brawlers.map((x) => new PlayerBrawler(x, client))
-		this.battlelog = data.battlelog
+		this.battlelog = data.battlelog ?? null
 	}
 	public getBrawler(name: string): Brawler | undefined {
 		return this.brawlers.find(

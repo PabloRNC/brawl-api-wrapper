@@ -14,14 +14,14 @@ export class Client {
 		this.token = token
 	}
 
-	public async getPlayer(tag: string | undefined): Promise<Player> {
-		return new Player(await new Request(this.token).getPlayer(tag), this)
+	public async getPlayer(tag: string | undefined, battlelog = false): Promise<Player> {
+		return new Player(await new Request(this.token).getPlayer(tag, battlelog), this)
 	}
 	public async getBattleLog(tag: string | undefined): Promise<BattleLog> {
 		return new BattleLog(await new Request(this.token).getBattleLog(tag))
 	}
 	public async getClub(tag: string | undefined): Promise<Club> {
-		return new Club(await new Request(this.token).getClub(tag))
+		return new Club(await new Request(this.token).getClub(tag), this)
 	}
 	public async getBrawler(brawler: Brawlers | undefined): Promise<Brawler> {
 		return new Brawler(await new Request(this.token).getBrawler(brawler))

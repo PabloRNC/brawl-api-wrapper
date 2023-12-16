@@ -38,5 +38,5 @@ export type PlayerResponse = {
 		| 20
 	club: { name: string; tag: string }
 	brawlers: Brawler[]
-	battlelog: BattleLogResponse[]
+	battlelog: BattleLogResponse[] | null
 }

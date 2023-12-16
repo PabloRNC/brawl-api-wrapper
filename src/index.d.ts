@@ -70,7 +70,7 @@ export type StarPower = {
 	id: number
 	name: string
 }
-export type ClubMember = {
+export type ClubMemberType = {
 	tag: string
 	name: string
 	nameColor: string
@@ -126,7 +126,7 @@ export type PlayerResponse = {
 		| 20
 	club: { name: string; tag: string }
 	brawlers: PlayerBrawler[]
-	battlelog: BattleLogResponse[]
+	battlelog: BattleLogResponse[] | null
 }
 export type RankingOfClubsResponse = {
 	tag: string
@@ -246,6 +246,18 @@ export class Client {
 	public getEvents(): Promise<EventsResponse[]>
 }
 
+export class ClubMember implements ClubMemberType {
+    public tag: string
+    public name: string
+    public nameColor: string
+    public role: string
+    public trophies: number
+    public icon: { id: number; }
+    public client: Client
+	public fetch(battlelog = false) : Promise<Player>
+    constructor(data: ClubMemberType, client: Client)
+}
+
 export class Club {
 	public tag: string
 	public name: string
@@ -256,7 +268,7 @@ export class Club {
 	public trophies: number
 	public members: ClubMember[]
 	public memberCount: number
-	constructor(data: ClubResponse)
+	constructor(data: ClubResponse, client: Client)
 	public sortClubMembersByTrophies(type: 'ASCENDING' | 'DESCENDING'): ClubMember[]
 }
 export class Player {
@@ -276,7 +288,7 @@ export class Player {
 	public bestRoboRumbleTime: string
 	public club: { name: string; tag: string }
 	public brawlers: PlayerBrawler[]
-	public battlelog: BattleLogResponse[]
+	public battlelog: BattleLogResponse[] | null
 	constructor(data: PlayerResponse, client: Client)
 	public getBrawler(name: string): PlayerBrawler
 	public getGadget(name: string): Gadget
