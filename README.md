@@ -29,8 +29,11 @@ const client = new Client('YOUR API KEY GOES HERE')
 This method return a player object, we only have to provide the player's tag
 
 ```js
-const player = await client.getPlayer('PLAYER TAG GOES HERE')
+const player = await client.getPlayer('PLAYER TAG GOES HERE', true) //the second param is to select if you want the battlelog to show or not. The default is false
+
 console.log(player.name) // return the player username
+
+//NOTE: Requesting the battlelog might get a 500 error by the Brawl Stars Api.
 ```
 
 <h1>GET PLAYER'S BATTLELOG</h1>
