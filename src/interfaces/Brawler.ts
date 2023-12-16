@@ -15,7 +15,7 @@ export type StarPower = {
 }
 
 export type Brawler = {
-	id: string
+	id: number
 	name: string
 	power: number
 	rank: number
@@ -27,7 +27,7 @@ export type Brawler = {
 }
 
 export type GlobalBrawler = {
-	id: string
+	id: number
 	name: string
 	gadgets: Gadget[]
 	starPowers: StarPower[]

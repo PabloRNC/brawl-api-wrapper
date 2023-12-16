@@ -1,7 +1,7 @@
 import type { Gadget, StarPower, GlobalBrawler } from '../interfaces/Brawler'
 
 export class Brawler {
-	public id: string
+	public id: number
 	public name: string
 	public starPowers: StarPower[]
 	public gadgets: Gadget[]

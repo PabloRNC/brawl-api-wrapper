@@ -39,13 +39,13 @@ export type BattleLogResponse = {
 }
 
 export type GlobalBrawler = {
-	id: string
+	id: number
 	name: string
 	gadgets: Gadget[]
 	starPowers: StarPower[]
 }
 export type PlayerBrawler = {
-	id: string
+	id: number
 	name: string
 	power: number
 	rank: number
@@ -220,7 +220,7 @@ export class BattleLog {
 	constructor(data: BattleLogResponse[])
 }
 export class Brawler {
-	public id: string
+	public id: number
 	public name: string
 	public starPowers: StarPower[]
 	public gadgets: Gadget[]
@@ -277,7 +277,7 @@ export class Player {
 	public club: { name: string; tag: string }
 	public brawlers: PlayerBrawler[]
 	public battlelog: BattleLogResponse[]
-	constructor(data: PlayerResponse)
+	constructor(data: PlayerResponse, client: Client)
 	public getBrawler(name: string): PlayerBrawler
 	public getGadget(name: string): Gadget
 	public getStarPower(name: string): StarPower
@@ -287,4 +287,20 @@ export class Player {
 		criteria: 'ASCENDING' | 'DESCENDING'
 	): PlayerBrawler[]
 	public getSeasonReset(): SeasonReset
+}
+
+export class PlayerBrawler implements Brawler {
+
+    public id: number
+	public name: string
+	public power: number
+	public rank: number
+	public highestTrophies: number
+	public trophies: number
+	public gears: Gear[]
+	public starPowers: StarPower[]
+	public gadgets: Gadget[]
+    public client: Client
+
+    constructor(data: Brawler, client: Client)
 }

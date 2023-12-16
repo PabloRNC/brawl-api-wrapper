@@ -4,6 +4,8 @@ import type { BattleLogResponse } from '../interfaces/BattleLogResponse'
 import type { Brawler, Gadget, Gear, StarPower } from '../interfaces/Brawler'
 import type { SeasonReset } from '../interfaces/SeasonReset'
 import { remainingTrophies, seasonBlings } from '../utils/SeasonReset'
+import type { Client } from './Client'
+import { PlayerBrawler } from './PlayerBrawler'
 export class Player {
 	public tag: string
 	public name: string
@@ -20,9 +22,9 @@ export class Player {
 	public '3vs3Victories': number
 	public bestRoboRumbleTime: string
 	public club: { name: string; tag: string } | null
-	public brawlers: Brawler[]
+	public brawlers: PlayerBrawler[]
 	public battlelog: BattleLogResponse[]
-	constructor(data: PlayerResponse) {
+	constructor(data: PlayerResponse, client: Client) {
 		this.name = data.name
 		this.tag = data.tag
 		this.nameColor = data.nameColor
@@ -38,7 +40,7 @@ export class Player {
 		this['3vs3Victories'] = data['3vs3Victories']
 		this.bestRoboRumbleTime = RoboRumble[data.bestRoboRumbleTime]
 		this.club = Object.keys(data.club).length === 0 ? null : data.club
-		this.brawlers = data.brawlers
+		this.brawlers = data.brawlers.map((x) => new PlayerBrawler(x, client))
 		this.battlelog = data.battlelog
 	}
 	public getBrawler(name: string): Brawler | undefined {

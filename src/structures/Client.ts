@@ -15,7 +15,7 @@ export class Client {
 	}
 
 	public async getPlayer(tag: string | undefined): Promise<Player> {
-		return new Player(await new Request(this.token).getPlayer(tag))
+		return new Player(await new Request(this.token).getPlayer(tag), this)
 	}
 	public async getBattleLog(tag: string | undefined): Promise<BattleLog> {
 		return new BattleLog(await new Request(this.token).getBattleLog(tag))
