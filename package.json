@@ -3,7 +3,7 @@
 	"version": "1.4.0",
 	"description": "An API wrapper for the well know supercell game called Brawl Stars",
 	"main": "dist/index.js",
-	"types": "src/index.d.ts",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
