@@ -74,5 +74,11 @@ export enum Brawlers {
 	Charlie,
 	Mico,
 	Kit,
-	Larry_Lawrie
+	Larry_Lawrie,
+	Melodie,
+	Angelo,
+	Draco,
+	Lily,
+	Berry,
+	Clancy
 }
