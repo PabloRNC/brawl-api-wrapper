@@ -80,5 +80,20 @@ export enum Brawlers {
 	Draco,
 	Lily,
 	Berry,
-	Clancy
+	Clancy,
+	Moe,
+	Kenji,
+	Shade,
+	Juju,
+	Meeple = 16000089,
+	Ollie,
+	Lumi,
+	Finx,
+	JaeJong,
+	Kaze,
+	Alli,
+	Trunk,
+	Mina,
+	Ziggy
+
 }
