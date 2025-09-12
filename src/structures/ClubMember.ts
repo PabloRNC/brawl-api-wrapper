@@ -22,6 +22,6 @@ export class ClubMember implements ClubMemberType {
     }
 
     public async fetch(battlelog = false) : Promise<Player> {
-        return new Player(await new Request(this.client.token).getPlayer(this.tag, battlelog), this.client)
+        return new Player(await this.client.requestManager.getPlayer(this.tag, battlelog), this.client)
     }
 }

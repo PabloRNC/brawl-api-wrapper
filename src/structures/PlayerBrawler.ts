@@ -30,6 +30,6 @@ export class PlayerBrawler implements Brawler {
     }
 
     public async fetch() : Promise<GlobalBrawler>{
-       return new GlobalBrawler(await new Request(this.client.token).getBrawler(this.id))
+       return new GlobalBrawler(await this.client.requestManager.getBrawler(this.id))
     }
 }
