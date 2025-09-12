@@ -1,5 +1,3 @@
-import type { Response } from 'node-fetch'
-
 export function CustomError(response: Response): string {
 	const { status, statusText } = response
 	const errorFiltered = errors

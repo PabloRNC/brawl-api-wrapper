@@ -1,4 +1,3 @@
-import fetch from 'node-fetch'
 import type { PlayerResponse } from '../interfaces/PlayerResponse'
 import type { BattleLogResponse } from '../interfaces/BattleLogResponse'
 import type { GlobalBrawler } from '../interfaces/Brawler'

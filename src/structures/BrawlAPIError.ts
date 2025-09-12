@@ -1,5 +1,3 @@
-import type { Response } from 'node-fetch'
-
 export class BrawlAPIError extends Error {
 	public override name: string
 	public override message: string
