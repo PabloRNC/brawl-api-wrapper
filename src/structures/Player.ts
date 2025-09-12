@@ -3,7 +3,7 @@ import type { PlayerResponse } from '../interfaces/PlayerResponse'
 import type { BattleLogResponse } from '../interfaces/BattleLogResponse'
 import type { Brawler, Gadget, Gear, StarPower } from '../interfaces/Brawler'
 import type { SeasonReset } from '../interfaces/SeasonReset'
-import { remainingTrophies, seasonBlings } from '../utils/SeasonReset'
+import { getSeasonReset } from '../utils/SeasonReset'
 import type { Client } from './Client'
 import { PlayerBrawler } from './PlayerBrawler'
 export class Player {
@@ -106,6 +106,9 @@ export class Player {
 	}
 
 	public getSeasonReset(): SeasonReset {
-          return { remainingTrophies: remainingTrophies(this.brawlers, this.trophies), blings: seasonBlings(this.brawlers) }
+
+		  const { remainingTrophies, trophyBox } = getSeasonReset(this.brawlers, this.trophies);
+
+          return { remainingTrophies, trophyBox }
 	}
 }

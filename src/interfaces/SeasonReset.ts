@@ -1,4 +1,6 @@
+import { TrophyBox } from "../utils/TrophyBox"
+
 export type SeasonReset = {
    remainingTrophies: number
-   blings: number
+   trophyBox: TrophyBox
 }
