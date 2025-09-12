@@ -1,13 +1,6 @@
-import type { PlayerResponse } from '../interfaces/PlayerResponse'
-import type { BattleLogResponse } from '../interfaces/BattleLogResponse'
-import type { GlobalBrawler } from '../interfaces/Brawler'
-import type { RankingOfPlayersResponse } from '../interfaces/RankingOfPlayerResponse'
-import type { RankingOfClubsResponse } from '../interfaces/RankingOfClubsResponse'
-import type { ClubResponse } from '../interfaces/ClubResponse'
-import type { EventsResponse } from '../interfaces/EventsResponse'
+import { CustomError, Brawlers } from '../utils'
+import type { PlayerResponse, BattleLogResponse, GlobalBrawler, RankingOfClubsResponse, RankingOfPlayersResponse, ClubResponse, EventsResponse } from '../interfaces'
 import { BrawlAPIError } from './BrawlAPIError'
-import { CustomError } from '../utils/CustomError'
-import type { Brawlers } from '../utils/Brawlers'
 
 export class Request {
 	public token?: string | undefined

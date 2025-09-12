@@ -1,6 +1,6 @@
 import { ClubMember } from './ClubMember'
-import type { ClubResponse } from '../interfaces/ClubResponse'
 import type { Client } from './Client'
+import type { ClubResponse } from '../interfaces'
 
 
 export class Club {

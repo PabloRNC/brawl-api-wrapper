@@ -1,5 +1,5 @@
 import { TrophyBox } from './TrophyBox';
-import type { Brawler } from '../interfaces/Brawler'
+import type { Brawler } from '../interfaces'
 
 export function getSeasonReset(brawlers: Brawler[], totalTrophies: number): { remainingTrophies: number, trophyBox: TrophyBox } {
 

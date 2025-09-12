@@ -3,10 +3,12 @@ import { Player } from './Player'
 import { BattleLog } from './BattleLog'
 import { Club } from './Club'
 import { Brawler } from './Brawler'
-import type { RankingOfPlayersResponse } from '../interfaces/RankingOfPlayerResponse'
-import type { RankingOfClubsResponse } from '../interfaces/RankingOfClubsResponse'
-import type { EventsResponse } from '../interfaces/EventsResponse'
-import type { Brawlers } from '../utils/Brawlers'
+import type { 
+	RankingOfPlayersResponse, 
+	RankingOfClubsResponse, 
+	EventsResponse 
+} from '../interfaces'
+import type { Brawlers } from '../utils'
 
 export class Client {
 	public requestManager: Request

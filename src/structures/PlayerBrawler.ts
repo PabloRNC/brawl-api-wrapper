@@ -1,6 +1,6 @@
-import type { Brawler, Gear, StarPower, Gadget } from '../interfaces/Brawler'
-import { Brawler as GlobalBrawler } from '../structures/Brawler'
 import type { Client } from './Client'
+import type { Brawler, Gear, StarPower, Gadget } from '../interfaces'
+import { Brawler as GlobalBrawler } from '../structures'
 
 export class PlayerBrawler implements Brawler {
 
