@@ -1,7 +1,6 @@
 import type { ClubMember as ClubMemberType } from '../interfaces/ClubMember'
 import type { Client } from './Client'
 import { Player } from './Player'
-import { Request } from './Request'
 
 export class ClubMember implements ClubMemberType {
     public tag: string
