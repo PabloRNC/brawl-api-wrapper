@@ -1,5 +1,14 @@
-import { CustomError, Brawlers } from '../utils'
-import type { PlayerResponse, BattleLogResponse, GlobalBrawler, RankingOfClubsResponse, RankingOfPlayersResponse, ClubResponse, EventsResponse } from '../interfaces'
+import type { Brawlers } from '../utils'
+import { CustomError } from '../utils'
+import type {
+	PlayerResponse,
+	BattleLogResponse,
+	GlobalBrawler,
+	RankingOfClubsResponse,
+	RankingOfPlayersResponse,
+	ClubResponse,
+	EventsResponse,
+} from '../interfaces'
 import { BrawlAPIError } from './BrawlAPIError'
 
 export class Request {
@@ -26,13 +35,16 @@ export class Request {
 			throw new BrawlAPIError(response, text)
 		}
 	}
-	public async getPlayer(tag: string | undefined, battlelog: boolean): Promise<PlayerResponse> {
+	public async getPlayer(
+		tag: string | undefined,
+		battlelog: boolean
+	): Promise<PlayerResponse> {
 		return await this.get(`players/%23${tag?.replace('#', '')}`).then(
 			async (res: PlayerResponse) =>
 				Object.defineProperty(res, 'battlelog', {
 					value: battlelog ? await this.getBattleLog(res.tag) : null,
 				})
-			)
+		)
 	}
 	public async getBattleLog(tag: string | undefined): Promise<BattleLogResponse[]> {
 		return await this.get(`players/%23${tag?.replace('#', '')}/battlelog`).then(

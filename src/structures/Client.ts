@@ -3,17 +3,17 @@ import { Player } from './Player'
 import { BattleLog } from './BattleLog'
 import { Club } from './Club'
 import { Brawler } from './Brawler'
-import type { 
-	RankingOfPlayersResponse, 
-	RankingOfClubsResponse, 
-	EventsResponse 
+import type {
+	RankingOfPlayersResponse,
+	RankingOfClubsResponse,
+	EventsResponse,
 } from '../interfaces'
 import type { Brawlers } from '../utils'
 
 export class Client {
 	public requestManager: Request
 	constructor(token: string | undefined) {
-		this.requestManager = new Request(token);
+		this.requestManager = new Request(token)
 	}
 
 	public async getPlayer(tag: string | undefined, battlelog = false): Promise<Player> {

@@ -94,6 +94,5 @@ export enum Brawlers {
 	Alli,
 	Trunk,
 	Mina,
-	Ziggy
-
+	Ziggy,
 }

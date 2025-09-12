@@ -2,7 +2,6 @@ import { ClubMember } from './ClubMember'
 import type { Client } from './Client'
 import type { ClubResponse } from '../interfaces'
 
-
 export class Club {
 	public tag: string
 	public name: string

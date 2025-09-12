@@ -7,4 +7,3 @@ export { RankingOfClubsResponse } from './interfaces/RankingOfClubsResponse'
 export { RankingOfPlayersResponse } from './interfaces/RankingOfPlayerResponse'
 export * from './structures'
 export * from './utils'
-

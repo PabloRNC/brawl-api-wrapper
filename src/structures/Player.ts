@@ -1,5 +1,13 @@
 import { RoboRumble, getSeasonReset } from '../utils'
-import type { PlayerResponse, BattleLogResponse, Brawler, Gadget, Gear, StarPower, SeasonReset } from '../interfaces'
+import type {
+	PlayerResponse,
+	BattleLogResponse,
+	Brawler,
+	Gadget,
+	Gear,
+	StarPower,
+	SeasonReset,
+} from '../interfaces'
 import type { Client } from './Client'
 import { PlayerBrawler } from './PlayerBrawler'
 export class Player {
@@ -102,9 +110,8 @@ export class Player {
 	}
 
 	public getSeasonReset(): SeasonReset {
+		const { remainingTrophies, trophyBox } = getSeasonReset(this.brawlers, this.trophies)
 
-		  const { remainingTrophies, trophyBox } = getSeasonReset(this.brawlers, this.trophies);
-
-          return { remainingTrophies, trophyBox }
+		return { remainingTrophies, trophyBox }
 	}
 }
